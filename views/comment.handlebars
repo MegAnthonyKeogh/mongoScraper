@@ -3,10 +3,11 @@
       <div class="col">
       <h2>Please add your thoughts below</h2>
       </div>
+      </div>
    <form>
-       {{#each data }}
+       
           <div class="form-group">
-            <h2>{{ this.title }}</h2>
+            <h2>{{ data.title }}</h2>
             <label for="formGroupExampleInput">Title</label>
             <input type="text" class="form-control" id="titleComment" placeholder="Example input">
   </div>
@@ -14,21 +15,28 @@
           <div class="form-group">
             <label for="formGroupExampleInput2">Comment</label>
             <input type="text" class="form-control" id="titleBody" placeholder="Another input">
-              <a href="#" class="btn btn-info" id="save" data_articleId="{{this._id}}">Save</a>
+              <button class="btn btn-info" id="save" data_articleId="{{data._id}}">Save</button>
   </div>
           </div>
-          {{/each}}
+        
         </form>
 
+        {{#each data.note}}
+        <p>{{this.title}}</p>
+        <p>{{this.body}}</p>
+        <button id="delete" data_commentId="{{this._id}}">Delete</button>
+        {{/each}}
+
         <script>
-            $(document).on("click", "#save", function() {
+            $(document).on("click", "#save", function(event) {
+              event.preventDefault();
   // Grab the id associated with the article from the submit button
   var thisId = $(this).attr("data_articleId");
 
   // Run a POST request to change the note, using what's entered in the inputs
   $.ajax({
     method: "POST",
-    url: "/articles/" + data_articleId,
+    url: "/articles/" + thisId,
     data: {
       // Value taken from title input
       title: $("#titleComment").val(),
@@ -41,11 +49,38 @@
       // Log the response
       console.log(data);
       // Empty the notes section
-      $("#notes").empty();
+      $("#note").empty();
+      location.reload();
+
     });
 
   // Also, remove the values entered in the input and textarea for note entry
   $("#titleComment").val("");
   $("#titleBody").val("");
 });
+
+ $(document).on("click", "#delete", function(event) {
+              event.preventDefault();
+              console.log("dan");
+              var thisId = $(this).attr("data_commentId");
+              console.log("this is the delete id" + thisId)
+              $.ajax({
+    method: "POST",
+    url: "/delete/" + thisId,
+    data: {
+      _id: thisId
+     
+    }
+  }).then(function (data) {
+    location.reload();
+        // Log the response
+        console.log(data);
+
+        // Empty the notes section
+      
+      });
+
+ })
+
+
         </script>
