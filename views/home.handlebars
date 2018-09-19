@@ -1,19 +1,93 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-4" id="note">
 
-  <ul>
-    {{#each data}}
-       <li>
-         {{this.title}}
-         <br>
-         {{this.link}}
-         <button class="comment" data_articleId="{{this._id}}">comment</button>
-       </li>
-    {{/each}}
-</ul>
+</div>
+
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-4">
+      {{#each data}}
+      <div class="card" style="width: 18rem;">
+        <img class="card-img-top" src="{{this.img}}" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">{{this.title}}</h5>
+          <p class="card-text"><a href="{{this.link}}">Read the whole article</a></p>
+          <a href="#" class="btn btn-primary" data_articleId="{{this._id}}">Comment</a>
+        </div>
+      </div>
+      {{/each}}
+    </div>
+  </div>
+</div>
+
+
+
+
 
 <script>
-  $(".comment").on("click", function (event){
+  $(".comment").on("click", function (event) {
     var articleId = $(this).attr("data_articleId");
     console.log(articleId);
-  })
+    $.ajax({
+      method: "GET",
+      url: "/articles/" + articleId
+    })
+      // With that done, add the note information to the page
+      .then(function (data) {
+        console.log(data);
+        $("#note").append({{this.title}});
+        $("#note").append("<input id='titleComment'>");
+        $("#note").append("<input id='titleBody'>")
+        /*<form>
+          <div class="form-group">
+            <h1>{{ this.title }}</h1>
+            <label for="formGroupExampleInput">Title</label>
+            <input type="text" class="form-control" id="titleComment" placeholder="Example input">
+  </div>
+          </div>
+          <div class="form-group">
+            <label for="formGroupExampleInput2">Comment</label>
+            <input type="text" class="form-control" id="titleBody" placeholder="Another input">
+              <a href="#" class="btn btn-info" id="save" data_articleId="{{this._id}}">Save</a>
+  </div>
+          </div>
+        </form>
+        */
+
+
+
+      })
+
+  });
+
+
+  $(document).on("click", "#savenote", function () {
+    // Grab the id associated with the article from the submit button
+    var thisId = $(this).attr("data-id");
+
+    // Run a POST request to change the note, using what's entered in the inputs
+    $.ajax({
+      method: "POST",
+      url: "/articles/" + articleId,
+      data: {
+        // Value taken from title input
+        title: $("#commentTitle").val(),
+        // Value taken from note textarea
+        body: $("#commentBody").val()
+      }
+    })
+      // With that done
+      .then(function (data) {
+        // Log the response
+        console.log(data);
+        // Empty the notes section
+        $(".note").empty();
+      });
+
+    // {{!-- // Also, remove the values entered in the input and textarea for note entry
+    // $("#titleinput").val("");
+    // $("#bodyinput").val(""); --}}
+  });
 </script>
- 
