@@ -6,7 +6,7 @@ const mongoose = require('mongoose');
 var bodyParser = require('body-parser');
 const cheerio = require('cheerio');
 var request = require('request');
-var PORT = 8080;
+var PORT = process.env.PORT || 8080;
  
 var app = express();
 
