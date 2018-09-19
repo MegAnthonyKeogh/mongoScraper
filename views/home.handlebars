@@ -1,0 +1,19 @@
+
+  <ul>
+    {{#each data}}
+       <li>
+         {{this.title}}
+         <br>
+         {{this.link}}
+         <button class="comment" data_articleId="{{this._id}}">comment</button>
+       </li>
+    {{/each}}
+</ul>
+
+<script>
+  $(".comment").on("click", function (event){
+    var articleId = $(this).attr("data_articleId");
+    console.log(articleId);
+  })
+</script>
+ 
