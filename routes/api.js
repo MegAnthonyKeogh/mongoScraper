@@ -50,12 +50,13 @@ app.get("/scrape", function(req, res) {
     db.Note.create(req.body)
       .then(function(dbNote) {
         return db.Article.findOneAndUpdate({ _id: req.params.id }, 
-          {set:{ note: dbNote._id }}, 
+          {$push:{ note: dbNote._id }}, 
           { new: true });
       })
       .then(function(dbArticle) {
         // If we were able to successfully update an Article, send it back to the client
         res.json(dbArticle);
+
       })
       .catch(function(err) {
         // If an error occurred, send it to the client
