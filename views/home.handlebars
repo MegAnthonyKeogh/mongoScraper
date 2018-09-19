@@ -1,8 +1,4 @@
-<div class="container-fluid">
-  <div class="row">
-    <div class="col-md-4" id="note">
 
-</div>
 
 
 <div class="container-fluid">
@@ -27,7 +23,7 @@
 
 
 <script>
-  $(".comment").on("click", function (event) {
+  $(".btn").on("click", function (event) {
     var articleId = $(this).attr("data_articleId");
     console.log(articleId);
     $.ajax({
@@ -40,23 +36,7 @@
         $("#note").append({{this.title}});
         $("#note").append("<input id='titleComment'>");
         $("#note").append("<input id='titleBody'>")
-        /*<form>
-          <div class="form-group">
-            <h1>{{ this.title }}</h1>
-            <label for="formGroupExampleInput">Title</label>
-            <input type="text" class="form-control" id="titleComment" placeholder="Example input">
-  </div>
-          </div>
-          <div class="form-group">
-            <label for="formGroupExampleInput2">Comment</label>
-            <input type="text" class="form-control" id="titleBody" placeholder="Another input">
-              <a href="#" class="btn btn-info" id="save" data_articleId="{{this._id}}">Save</a>
-  </div>
-          </div>
-        </form>
-        */
-
-
+  
 
       })
 
