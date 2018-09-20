@@ -17,11 +17,19 @@
         
         </form>
 
-        {{#each data.note}}
-        <p>{{this.title}}</p>
-        <p>{{this.body}}</p>
-        <button id="delete" data_commentId="{{this._id}}">Delete</button>
-        {{/each}}
+        <div class="card">
+          {{#each data.note}}
+  <div class="card-header">
+    <h5>{{this.title}}</h5>
+  </div>
+  <div class="card-body">
+    <h6 class="card-title">{{this.body}}</h6>
+    <button class="btn btn-info" id="delete" data_commentId="{{this._id}}">Delete</button>
+   
+  </div>
+   {{/each}}
+</div>
+
 
         <script>
             $(document).on("click", "#save", function(event) {
