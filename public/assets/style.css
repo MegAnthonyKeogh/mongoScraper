@@ -1,0 +1,28 @@
+.jumbotron {
+    color: white;
+    background: linear-gradient(to bottom, rgba(22, 22, 22, 0.1) 0%, rgba(22, 22, 22, 0.5) 75%, #161616 100%), url("./images/spices2.jpg");
+    height: 300px;
+}
+body {
+    background-color:#32312b;
+    color: white;
+}
+.card {
+    margin: 20px;
+}
+
+form {
+    margin: 40px;
+    background-color:#32312b;
+}
+.form-group {
+    margin: 40px; 
+}
+
+#save {
+    margin: 20px;
+}
+
+h3 {
+    margin: 40px;
+}

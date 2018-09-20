@@ -14,6 +14,7 @@ var app = express();
 //app.use(logger("dev"));
 
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(express.static(__dirname + "/public"));
  
 app.engine(
     "handlebars",
