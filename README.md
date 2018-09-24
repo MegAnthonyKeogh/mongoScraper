@@ -13,7 +13,7 @@ After that, find the copy project and cd (change directory) into the copied repo
 
 
 Prerequisites
-In order to launch this project, you will need to already have [node.js](https://nodejs.org/en/) running on your computer. You will also need [MongoDB](https://www.mongodb.com/), [Robo T3](https://robomongo.org/) (a lightweight GUI to work with MongoDB. 
+In order to launch this project, you will need to already have [node.js](https://nodejs.org/en/) running on your computer. You will also need [MongoDB](https://www.mongodb.com/), [Robo T3](https://robomongo.org/) (a lightweight GUI to work with MongoDB). 
 
 Give examples
 Installing
