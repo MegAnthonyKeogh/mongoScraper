@@ -13,11 +13,14 @@ After that, find the copy project and cd (change directory) into the copied repo
 
 
 Prerequisites
-In order to launch this project, you will need to already have [node.js](https://nodejs.org/en/) running on your computer. You will also need [MongoDB](https://www.mongodb.com/), [Robo T3](https://robomongo.org/) (a lightweight GUI to work with MongoDB). 
+In order to launch this project, you will need to already have [node.js](https://nodejs.org/en/) running on your computer. You will also need [MongoDB](https://www.mongodb.com/), [Robo T3](https://robomongo.org/) (a lightweight GUI to work with MongoDB). For my text editor, I used [vscode](https://code.visualstudio.com/) for mac. 
 
-Give examples
-Installing
-A step by step series of examples that tell you how to get a development env running
+The directions for installing all of these development tools are extremely easy to follow. 
+
+Scraping
+Before we can develop any of the functionality of the site, we need to first pull data from NPR's food section. The First step here is to go the website and inspect the site using your developer tools. I chose to use chrome developer tools and inspected the site. After finding the tags I wanted (or believe) had the right information, I targeted those tags and 'scrape' that data to my own website. 
+
+I wanted to pull an image, the article headline, and the link to the site. 
 
 Say what the step will be
 
