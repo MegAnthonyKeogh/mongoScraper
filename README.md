@@ -33,6 +33,10 @@ By highlighting the title of the article and then opening the Chrome Developer T
 
 Next I used express and cheerio to set up a route that scrapes the NPR Food Section and delivered in the information in json format to me. Express builds the routes for the website and initiates the functions when a user visits that route. Cheerio scrapes the webpage of your choosing when initiated. When the user visits the '/scrape' route on my website, express initiates the cheerio (via my code) to complete the scrape. 
 
+What you do not see in this code is that var app = express();. I exported express from the server.js file to my routes (apiRoutes.js) file using export.modules and I am now able to leverage this functionality on this page. Here is my code to scrape the webiste using Cheerio. 
+
+![scrape code](scrapeCode.png)
+
 While I was 
 
 Give the example
