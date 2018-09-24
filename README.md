@@ -4,6 +4,9 @@
 
 This application scrapes the html and data from the NPR's Food Section website when the user goes to the route "/scrape" and then refreshes those articles on the main page. The user can then select to comment on the article to go directly to the article page and read it. The user can also delete the comments on article. 
 
+This is what the main page looks like after the site has successfully retrieved one successful scrape of the sight. I used Bootstrap 4, Express, and Handlebarsjs to build out the look and feel of the sight. 
+![main page](mainPage.png)
+
 In a future iteration of this project, I plan on building in a button to initiate the scraping for the user. All of the articles and comments on the articles are saved in a MongoDB database.
 
 Getting Started
