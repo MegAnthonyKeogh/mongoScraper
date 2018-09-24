@@ -31,7 +31,9 @@ I wanted to pull an image, the article headline, and the link to the site.
 By highlighting the title of the article and then opening the Chrome Developer Tools, I was able to find both the Headling tag (h2 title) and the anchor tag (a href) easily. I had a little more trial and error with finding the image tag because it is somewhat separated from the other tags. The image below shows how I highlighted the element I wanted and how I found it in the corresponding section in the developer tools. 
 ![chrome inspector](scraper.png)
 
-Say what the step will be
+Next I used express and cheerio to set up a route that scrapes the NPR Food Section and delivered in the information in json format to me. Express builds the routes for the website and initiates the functions when a user visits that route. Cheerio scrapes the webpage of your choosing when initiated. When the user visits the '/scrape' route on my website, express initiates the cheerio (via my code) to complete the scrape. 
+
+While I was 
 
 Give the example
 And repeat
