@@ -9,6 +9,8 @@ This is what the main page looks like after the site has successfully retrieved 
 
 In a future iteration of this project, I plan on building in a button to initiate the scraping for the user. All of the articles and comments on the articles are saved in a MongoDB database.
 
+For the comment section, users can make comments and then afterwards delete them. Using Express, I was able to direct the user to different pages depending on the users choice in actions. Here is what it looks like when a user picks an article to comment on. ![When the user chooses on article to comment](comment.png)]
+
 Getting Started
 You can easily re-create/reimagine this project by doing the following steps. First, copy contents of this repository by clicking the green clone or download the repository button. Next, go to your terminal window and decide where you would like this project to live(in your documents or on your desktop). Then type the command `git init` and paste the github SSH key info. 
 
