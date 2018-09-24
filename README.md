@@ -21,6 +21,8 @@ Scraping
 Before we can develop any of the functionality of the site, we need to first pull data from NPR's food section. The First step here is to go the website and inspect the site using your developer tools. I chose to use chrome developer tools and inspected the site. After finding the tags I wanted (or believe) had the right information, I targeted those tags and 'scrape' that data to my own website. 
 
 I wanted to pull an image, the article headline, and the link to the site. 
+By highlighting the title of the article and then opening the Chrome Developer Tools, I was able to find both the Headling tag (h2 title) and the anchor tag (a href) easily. I had a little more trial and error with finding the image tag because it is somewhat separated from the other tags. The image below shows how I highlighted the element I wanted and how I found it in the corresponding section in the developer tools. 
+![chrome inspector](scraper.png)
 
 Say what the step will be
 
