@@ -10,7 +10,7 @@ var ObjectId = require("mongoose").Types.ObjectId;
 module.exports = function(app){
 
 app.get("/scrape", function(req, res) {
-  console.log("hello ed");
+  
     // First, we grab the body of the html with request
     request("https://www.npr.org/sections/food/", function (error, response, html){
       
